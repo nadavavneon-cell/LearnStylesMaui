@@ -10,7 +10,16 @@
     <Color x:Key="DynamicAccentColor">#512BD4</Color>
     <Color x:Key="CardBackgroundColor">#FFFFFF</Color>
     <Color x:Key="CardBorderColor">#E0E0E0</Color>
-
+    
+    <!--עבודה פרויקט-->
+    <Style  x:Key="StudentCustomCard" TargetType="Border">
+        <Setter Property= "StrokeShape" Value="RoundRectangle 16"/>
+        <Setter Property="BackgroundColor" Value= "#F0FDF4"/>
+        <Setter Property="StrokeThickness" Value="2"/>
+        <Setter Property="Stroke" Value="#86EFAC"/>
+        <Setter Property="Shadow"/>
+    </Style>
+           
     <!-- ======================================================== -->
     <!-- 2. סגנון מרומז (Implicit Style)                         -->
     <!-- ללא x:Key! כל ה-Labels יקבלו סגנון זה כברירת מחדל          -->
@@ -89,7 +98,7 @@
 
     <!-- סגנון עבור תרגיל התלמיד (Warning Button המבוסס על PrimaryButton) -->
     <Style x:Key="WarningButton" TargetType="Button" BasedOn="{StaticResource PrimaryButton}">
-        <Setter Property="BackgroundColor" Value="#F57C00" />
+        <Setter Property="BackgroundColor" Value="#EA580C" />
     </Style>
 
     <!-- ======================================================== -->

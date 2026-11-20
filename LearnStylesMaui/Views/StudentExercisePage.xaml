@@ -3,12 +3,19 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:LearnStylesMaui.ViewModels"
              xmlns:models="clr-namespace:LearnStylesMaui.Models"
+             xmlns:converters="clr-namespace:LearnStylesMaui.Converters"
              x:Class="LearnStylesMaui.Views.StudentExercisePage"
              x:DataType="vm:StudentExerciseViewModel"
              Title="משימת תרגול לתלמידים"
              FlowDirection="RightToLeft">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:StarsConverter x:Key="StarsConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
 
-    <ScrollView>
+
+        <ScrollView>
         <VerticalStackLayout Padding="20" Spacing="16">
 
             <!-- כותרת ראשית והנחיות לתלמיד -->
@@ -89,9 +96,10 @@
 
                     <!-- ============================================================== -->
                     <!-- TODO לתלמיד: החלף את Style="{StaticResource CardBorder}"      -->
+                    
                     <!-- בסגנון המותאם שיצרת: Style="{StaticResource StudentCustomCard}" -->
                     <!-- ============================================================== -->
-                    <Border Style="{StaticResource CardBorder}" BackgroundColor="#FAFAFA">
+                    <Border Style="{StaticResource StudentCustomCard}">
                         <VerticalStackLayout Spacing="8">
                             <Label Text="{Binding StudentName}" FontSize="18" FontAttributes="Bold" />
 
@@ -104,6 +112,7 @@
 
                             <!-- ============================================================== -->
                             <!-- TODO לתלמיד: לאחר יצירת StarsConverter, קשרו אותו לכאן:     -->
+                            <Label Text="{Binding DifficultyStars, Converter={StaticResource StarsConverter}}" />
                             <!-- Text="{Binding DifficultyStars, Converter={StaticResource StarsConverter}}" -->
                             <!-- ============================================================== -->
                             <HorizontalStackLayout Spacing="8">
